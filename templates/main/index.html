@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}La mia prima pagina web{% endblock %}
+
+{% block description %}
+    Una pagina web realizzata a fini di test
+{% endblock %}
+
+{% block content%}
+    <div class="container">
+    <div class="text-center">
+<h1>Buongiorno mondo!</h1>
+        <a class="btn btn-primary m-1" href="{% url 'prodotti' %}">Prodotti</a>
+        <a class="btn btn-primary m-1" href="{% url 'prodottocreate' %}">Crea prodotto</a>
+    </div>
+</div>
+{% endblock %}

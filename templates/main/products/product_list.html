@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}La mia prima pagina web{% endblock %}
+
+{% block description %}
+    Una pagina web realizzata a fini di test
+{% endblock %}
+
+{% block content%}
+{% if product_list %}
+    <div class="container">
+    <div class="row">
+    {% for product in product_list %}
+        <div class="col-4">
+        <img src="{{ product.img }}" alt="">
+        <h3>{{ product.name }}</h3>
+        <div class="d-flex ">
+            <span>{{ product.description }}</span><span>{{ product.price }}</span>
+            <a href="{% url 'prodottodetail' product.pk %}">Visualizza</a>
+            <a href="{% url 'prodottodelete' product.pk %}">Elimina</a>
+        </div>
+        </div>
+    {% endfor %}
+    {% else %}
+    <p>Nessun prodotto da visualizzare</p>
+    {% endif %}
+
+    </div>
+            <a class="btn btn-primary m-1" href="{% url 'prodottocreate' %}">Crea prodotto</a>
+
+    </div>
+
+{% endblock %}

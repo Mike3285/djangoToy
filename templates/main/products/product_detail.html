@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}La mia prima pagina web{% endblock %}
+
+{% block description %}
+    Una pagina web realizzata a fini di test
+{% endblock %}
+
+{% block content%}
+
+    <div class="container">
+    <div class="row">
+        <div class="col-12">
+        <img src="{{ product.img }}">
+        <h3>{{ product.name }}</h3>
+        <div class="d-flex ">
+            <span>{{ product.description }}</span><span>{{ product.price }}</span>
+        </div>
+        </div>
+
+    </div>
+    </div>
+
+{% endblock %}

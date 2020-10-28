@@ -1,0 +1,42 @@
+{% extends 'base.html' %}{% load widget_tweaks %}
+{% block title %}La mia prima pagina web{% endblock %}
+
+{% block description %}
+    Una pagina web realizzata a fini di test
+{% endblock %}
+
+{% block content%}
+    <div class="container">
+<form method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<div class="row">
+        <div class="col blocco-campo">
+        <label for="form_name" class="col-form-label">{{ form.name.label }}</label>
+        {% render_field form.name id='form_name' class='form-control' %}
+    </div>
+    <div class="col blocco-campo">
+        <label for="form_price" class="col-form-label">{{ form.price.label }}</label>
+        {% render_field form.price id='form_price' class='form-control' %}
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-12 blocco-campo">
+        <label for="form_img" class="col-form-label">{{ form.img.label }}</label>
+        {% render_field form.img id='form_img' class='form-control' %}
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 blocco-campo">
+        <label for="form_description" class="col-form-label">{{ form.description.label }}</label>
+        {% render_field form.description id='form_description' class='form-control' %}
+    </div>
+</div>
+    <div class="row m-1">
+
+<div class="col-12 blocco-campo">
+                <input type="submit" class="btn btn-primary" value="Invia" role="button">
+</div></div>
+        </form>
+    </div>
+{% endblock %}
