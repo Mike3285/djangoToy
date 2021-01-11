@@ -18,9 +18,14 @@ from django.urls import path
 from shop import views
 
 urlpatterns = [
-    path('', views.index),
+    path('', views.index, name='index'),
     path('products', views.ProductListView.as_view(), name='prodotti'),
     path('products/create', views.ProductCreateView.as_view(), name='prodottocreate'),
     path('products/<int:pk>', views.ProductDetailView.as_view(), name='prodottodetail'),
     path('products/del/<int:pk>', views.ProductDeleteView.as_view(), name='prodottodelete'),
+    path('payment', views.process_payment, name='process_payment'),
+    path('checkout', views.checkout, name='checkout'),
+    path('return', views.la_return_view, name='return_view'),
+    path('canceled', views.la_cancel_view, name='cancel_view'),
+
 ]

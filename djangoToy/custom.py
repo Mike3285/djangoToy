@@ -98,7 +98,7 @@ class MyUpdateView(UpdateView):
 class MyDeleteView(DeleteView):
     def get_object(self, *args, **kwargs):
         obj = super(MyDeleteView, self).get_object(*args, **kwargs)
-        if self.request.user == obj.owner or self.request.user.is_superuser == obj.owner:
+        if self.request.user == obj.owner or self.request.user.is_superuser:
             return obj
         else:
             raise PermissionDenied()

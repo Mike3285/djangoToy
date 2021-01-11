@@ -25,7 +25,7 @@ SECRET_KEY = 'y)$^1*hn%1o)y#!f^=&ywx9xyyafus@=$#heuu@m0c&j(phhum'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['1d85e08934f4.ngrok.io','127.0.0.1']
 
 
 # Application definition
@@ -39,7 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shop.apps.ShopConfig',
     "widget_tweaks",
+    'paypal.standard.ipn',
+
 ]
+PAYPAL_TEST = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

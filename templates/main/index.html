@@ -8,9 +8,14 @@
 {% block content%}
     <div class="container">
     <div class="text-center">
-<h1>Buongiorno mondo!</h1>
+<h1>Benvenuto in questo negozio virtuale!</h1>
+        <div>
+        <img class="img-fluid" src="https://picsum.photos/250/250" width="250" height="250" alt="Una foto a caso"></div>
+        <div>
         <a class="btn btn-primary m-1" href="{% url 'prodotti' %}">Prodotti</a>
         <a class="btn btn-primary m-1" href="{% url 'prodottocreate' %}">Crea prodotto</a>
+        <a class="btn btn-primary m-1" href="{% url 'checkout' %}">Fai Checkout</a>
+        <a class="btn btn-primary m-1" href="{% url 'process_payment' %}">Compra qualcosa</a></div>
     </div>
 </div>
 {% endblock %}

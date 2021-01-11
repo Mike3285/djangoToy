@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>This is the checkout page</h1>
+
+    <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+        {{ form.as_p }}
+<input class="btn btn-success" type="submit" value="Conferma e vai al pagamento">
+    </form>
+
+
+            <a class="btn btn-primary m-1" href="{% url 'index' %}">Torna alla home</a>
+
+{% endblock %}

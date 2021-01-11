@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>This is a payment page</h1>
+    <h3>Hai scelto il piano {{ subscription_plan }}</h3>
+    {{ form.render }}
+            <a class="btn btn-primary m-1" href="{% url 'index' %}">Torna alla home</a>
+
+{% endblock %}
