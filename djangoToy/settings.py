@@ -37,10 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "widget_tweaks",
+    'transactions',
     'debug_toolbar',
 
-    "widget_tweaks",
-    'transactions'
 ]
 PAYPAL_TEST = True
 
@@ -93,7 +93,9 @@ TEMPLATES = [
         },
     },
 ]
-
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
 WSGI_APPLICATION = 'djangoToy.wsgi.application'
 
 

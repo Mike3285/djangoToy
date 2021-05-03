@@ -11,11 +11,7 @@
 <h1>Benvenuto in questo negozio virtuale!</h1>
         <div>
         <img class="img-fluid" src="https://picsum.photos/250/250" width="250" height="250" alt="Una foto a caso"></div>
-        <ul style="columns:6">
-
-            {% for transaction in transazioni %}
-            <li>{{ transaction.importo }} {{ transaction.district_utente }}</li>
-            {% endfor %}
+        <ul style="columns:6">{{transazioni}}
         </ul>
         <div>
 {#        <a class="btn btn-primary m-1" href="{% url 'prodotti' %}">Prodotti</a>#}
