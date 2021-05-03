@@ -15,15 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from django.conf import settings
+from shop import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',include('transactions.urls'))
-]
-if settings.DEBUG:
-    import debug_toolbar
-    urlpatterns += [
-        path('__debug__/', include(debug_toolbar.urls)),
-    ]
+    path('', views.index, name='index'),
+    path('products', views.ProductListView.as_view(), name='prodotti'),
+    path('products/create', views.ProductCreateView.as_view(), name='prodottocreate'),
+    path('products/<int:pk>', views.ProductDetailView.as_view(), name='prodottodetail'),
+    path('products/del/<int:pk>', views.ProductDeleteView.as_view(), name='prodottodelete'),
+    path('payment', views.process_payment, name='process_payment'),
+    path('checkout', views.checkout, name='checkout'),
+    path('return', views.payment_thankyou, name='payment_thankyou'),
+    path('canceled', views.payment_canceled, name='payment_canceled'),
 
+]
